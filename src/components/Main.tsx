@@ -1,27 +1,33 @@
-export const Main: React.FC<{
+import reduSvg from "/public/assets/img/REDU_VETORIZADO_animated.svg";
+import reduAnimatedSvg from "/public/assets/img/REDU.svg";
+import logoSvg from "/public/assets/img/animated_final.svg";
+import logoAnimatedSvg from "/public/assets/img/redux_x_branco.svg";
+import nameSvg from "/public/assets/img/name.svg";
+
+type Props = {
   logoRef: React.RefObject<HTMLImageElement>;
   logoAnimatedRef: React.RefObject<HTMLImageElement>;
   reduRef: React.RefObject<HTMLImageElement>;
   reduAnimatedRef: React.RefObject<HTMLImageElement>;
   nameRef: React.RefObject<HTMLImageElement>;
   beforeRef: React.RefObject<HTMLDivElement>;
-}> = ({
+};
+
+export function Main({
   logoRef,
   logoAnimatedRef,
   reduRef,
   reduAnimatedRef,
   nameRef,
   beforeRef,
-}) => {
-  // ...
-
+}: Props) {
   return (
     <main className="flex">
       <div className="wrapper flex">
         <div className="redux flex">
           <img
             id="redu_vetor"
-            src="/public/assets/img/REDU_VETORIZADO_animated.svg"
+            src={reduSvg}
             width="500px"
             height="300px"
             alt="Redu"
@@ -29,7 +35,7 @@ export const Main: React.FC<{
           />
           <img
             id="redu"
-            src="/public/assets/img/REDU.svg"
+            src={reduAnimatedSvg}
             width="500px"
             height="300px"
             alt="Redu"
@@ -40,7 +46,7 @@ export const Main: React.FC<{
         <div className="animation flex">
           <img
             id="svg1"
-            src="/public/assets/img/animated_final.svg"
+            src={logoSvg}
             alt="X"
             width="300px"
             height="300px"
@@ -48,7 +54,7 @@ export const Main: React.FC<{
           />
           <img
             id="svg2"
-            src="/public/assets/img/redux_x_branco.svg"
+            src={logoAnimatedSvg}
             alt="X_logo"
             width="300px"
             height="300px"
@@ -59,4 +65,4 @@ export const Main: React.FC<{
       <div className="wrapper_before" ref={beforeRef}></div>
     </main>
   );
-};
+}
