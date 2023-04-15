@@ -1,7 +1,7 @@
-import reduSvg from "/public/assets/img/REDU_VETORIZADO_animated.svg";
-import reduAnimatedSvg from "/public/assets/img/REDU.svg";
-import logoSvg from "/public/assets/img/animated_final.svg";
-import logoAnimatedSvg from "/public/assets/img/redux_x_branco.svg";
+import reduAnimatedSvg from "/public/assets/img/REDU_VETORIZADO_animated.svg";
+import reduSvg from "/public/assets/img/REDU.svg";
+import logoAnimatedSvg from "/public/assets/img/animated_final.svg";
+import logoSvg from "/public/assets/img/redux_x_branco.svg";
 import nameSvg from "/public/assets/img/name.svg";
 
 type Props = {
@@ -21,13 +21,15 @@ export function Main({
   nameRef,
   beforeRef,
 }: Props) {
+  const { value } = { value: Math.random() };
+
   return (
     <main className="flex">
       <div className="wrapper flex">
         <div className="redux flex">
           <img
             id="redu_vetor"
-            src={reduSvg}
+            src={reduAnimatedSvg + `?v=${value}`}
             width="500px"
             height="300px"
             alt="Redu"
@@ -35,18 +37,18 @@ export function Main({
           />
           <img
             id="redu"
-            src={reduAnimatedSvg}
+            src={reduSvg}
             width="500px"
             height="300px"
             alt="Redu"
             ref={reduRef}
           />
-          <img id="name" src="/assets/img/name.svg" alt="Name" ref={nameRef} />
+          <img id="name" src={nameSvg} alt="Name" ref={nameRef} />
         </div>
         <div className="animation flex">
           <img
             id="svg1"
-            src={logoSvg}
+            src={logoAnimatedSvg + `?v=${value}`}
             alt="X"
             width="300px"
             height="300px"
@@ -54,7 +56,7 @@ export function Main({
           />
           <img
             id="svg2"
-            src={logoAnimatedSvg}
+            src={logoSvg}
             alt="X_logo"
             width="300px"
             height="300px"
